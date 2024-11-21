@@ -1,23 +1,8 @@
 import { createRoot } from 'react-dom/client'
-import {
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router-dom";
+import { RouterProvider } from "react-router-dom";
 import './index.css';
 import { Auth0Provider } from "@auth0/auth0-react";
-import App from './App.jsx';
-import Chat from './Views/Chat';
-
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <App />,
-  },
-  {
-    path: "/chat",
-    element: <Chat />,
-  },
-]);
+import router from './router';
 
 createRoot(document.getElementById('root')).render(
   <Auth0Provider

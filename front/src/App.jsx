@@ -1,10 +1,10 @@
 import './App.css'
 import { useAuth0 } from "@auth0/auth0-react";
-import { Link } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
 
 function App() {
   const { loginWithRedirect, logout, user, isAuthenticated } = useAuth0();
-
+  const navigate = useNavigate();
 
   return (
     <>
@@ -19,12 +19,14 @@ function App() {
           </button>
         </div>
       )} */}
-      <button className="btn btn-primary">
-        <Link to={`chat`}> Ingresar </Link>
+      <button
+        type="submit"
+        className="submit-button"
+        onClick={() => navigate('gameform')}
+        style={{ color: 'white' }}
+      >
+        Ingresar
       </button>
-      {/* <div>
-        <Outlet />
-      </div> */}
     </>
   )
 }

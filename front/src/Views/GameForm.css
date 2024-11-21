@@ -1,12 +1,8 @@
 .form-container {
     max-width: 1280px;
-    /* Adjusted to match #root */
     margin: 0 auto;
-    /* Center alignment */
     padding: 2rem;
-    /* Increased padding for a spacious look */
     text-align: center;
-    /* Center the text */
     border: 1px solid #ccc;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -18,21 +14,18 @@ h2 {
     color: #333;
     font-family: "Arial", sans-serif;
     font-size: 1.5rem;
-    /* Adjusted for consistency */
 }
 
 .game-form {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
-    /* Increased gap for a more modern look */
 }
 
 .form-group {
     display: flex;
     flex-direction: column;
     text-align: left;
-    /* Keep labels aligned left */
 }
 
 label {
@@ -44,7 +37,6 @@ label {
 input,
 select {
     padding: 1rem;
-    /* Larger padding for a modern style */
     border: 1px solid #ccc;
     border-radius: 4px;
     font-size: 1rem;
@@ -53,31 +45,24 @@ select {
 input:focus,
 select:focus {
     border-color: #646cff;
-    /* Updated color for consistency */
     outline: none;
     box-shadow: 0 0 3px rgba(100, 108, 255, 0.5);
 }
 
 .submit-button {
     padding: 1rem 1.5rem;
-    /* Match the padding style */
     background-color: #646cff;
-    /* Updated to match hover color in example */
     color: #fff;
     border: none;
     border-radius: 8px;
-    /* Larger radius for softer edges */
     font-size: 1rem;
     cursor: pointer;
     transition: background-color 300ms ease;
-    /* Consistent with the example */
 }
 
 .submit-button:hover {
     background-color: #505ac9;
-    /* Slightly darker hover effect */
     filter: drop-shadow(0 0 2em #646cffaa);
-    /* Add glow effect */
 }
 
 .submit-button:focus {
@@ -85,19 +70,3 @@ select:focus {
     box-shadow: 0 0 3px rgba(100, 108, 255, 0.5);
 }
 
-@keyframes button-spin {
-    from {
-        transform: rotate(0deg);
-    }
-
-    to {
-        transform: rotate(360deg);
-    }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-    .submit-button:hover {
-        animation: button-spin infinite 20s linear;
-        /* Optional spin animation */
-    }
-}
