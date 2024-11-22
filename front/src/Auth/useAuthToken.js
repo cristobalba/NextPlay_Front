@@ -9,14 +9,12 @@ const useAuthToken = () => {
   // Función para obtener el token
   const fetchToken = async () => {
     try {
-      console.log("ACA1");
       const accessToken = await getAccessTokenSilently({
         authorizationParams: {
-          // audience: import.meta.env.VITE_AUTH0_AUDIENCE,
+          audience: import.meta.env.VITE_AUTH0_AUDIENCE,
           scope: import.meta.env.VITE_AUTH0_SCOPE,
         },
       });
-      console.log("ACA2");
       setToken(accessToken);  // Guardamos el token en el estado
     } catch (err) {
       setError('Error al obtener el token');  // Manejo de errores

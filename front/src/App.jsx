@@ -14,14 +14,10 @@ function App() {
 
     const claims = await getIdTokenClaims();
     const isNewUser = claims[import.meta.env.VITE_NAMESPACE]
-    if (isNewUser) {
-      console.log('User recién registrado:');
-    }
-    if (token) {
-      console.log(token);
-      await axios.post(`${import.meta.env.VITE_API_URL}/user/register`, {
-        auth: {
-          sub: token,
+    if (isNewUser && token) {
+      await axios.post(`${import.meta.env.VITE_API_URL}/user/register`, {}, {
+        headers: {
+          Authorization: `Bearer ${token}`,
         },
       });
     }
@@ -48,7 +44,7 @@ function App() {
           onClick={() => loginWithRedirect()}>Ingresar</button>
       ) : (
         <div>
-          <h2>Welcome, {user?.name}</h2>
+          <h2>Welcome {user?.nickname}</h2>
           <button type="submit"
             className="submit-button"
             style={{ color: 'white' }}
