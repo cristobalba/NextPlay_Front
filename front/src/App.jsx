@@ -9,24 +9,30 @@ function App() {
   return (
     <>
       <h1>NextPlay.</h1>
-      {/* {!isAuthenticated ? (
-        <button onClick={() => loginWithRedirect()}>Login</button>
+      {!isAuthenticated ? (
+        <button type="submit"
+          className="submit-button"
+          style={{ color: 'white' }}
+          onClick={() => loginWithRedirect()}>Ingresar</button>
       ) : (
         <div>
           <h2>Welcome, {user?.name}</h2>
-          <button onClick={() => logout({ returnTo: window.location.origin })}>
+          <button type="submit"
+            className="submit-button"
+            style={{ color: 'white' }} 
+            onClick={() => logout({ returnTo: window.location.origin })}>
             Logout
           </button>
         </div>
-      )} */}
-      <button
+      )}
+      {/* <button
         type="submit"
         className="submit-button"
         onClick={() => navigate('gameform')}
         style={{ color: 'white' }}
       >
         Ingresar
-      </button>
+      </button> */}
     </>
   )
 }
