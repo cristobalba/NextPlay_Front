@@ -37,6 +37,8 @@ function GameForm() {
     gameType: "",
   });
 
+  const [missingData, setMissingData] = useState(false);
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
@@ -46,6 +48,16 @@ function GameForm() {
     e.preventDefault();
     alert(`Submitted: ${JSON.stringify(formData, null, 2)}`);
   };
+
+  const isFormDataEmpty = Object.values(formData).some((value) => value === "");
+
+  const checkInputs = () => {
+    if (isFormDataEmpty) {
+      return setMissingData(true);
+    }
+    setMissingData(false);
+    navigate('../chat');
+  }
 
   return (
     <div className="form-container">
@@ -95,11 +107,15 @@ function GameForm() {
         <button
           type="submit"
           className="submit-button"
-          onClick={() => navigate('../chat')}
+          onClick={() => checkInputs()}
           style={{ color: 'white' }}
         >
           Enviar
         </button>
+        {missingData? (
+        <p style={{ color: 'red' }}>*Debes rellenar todos los campos</p>) 
+        : (<></>)
+        }
       </form>
     </div>
   );

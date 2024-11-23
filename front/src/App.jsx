@@ -36,31 +36,54 @@ function App() {
 
   return (
     <>
-      <h1>NextPlay.</h1>
-      {!isAuthenticated ? (
-        <button type="submit"
-          className="submit-button"
-          style={{ color: 'white' }}
-          onClick={() => loginWithRedirect()}>Ingresar</button>
-      ) : (
-        <div>
-          <h2>Welcome {user?.nickname}</h2>
-          <button type="submit"
-            className="submit-button"
-            style={{ color: 'white' }}
-            onClick={() => logout({ returnTo: window.location.origin })}>
+      <div className="header-container">
+        {isAuthenticated && (
+          <button
+            type="submit"
+            className="logout-button"
+            onClick={() => logout({ returnTo: window.location.origin })}
+          >
             Logout
           </button>
-        </div>
-      )}
-      {/* <button
-        type="submit"
-        className="submit-button"
-        onClick={() => navigate('gameform')}
-        style={{ color: 'white' }}
-      >
-        Ingresar
-      </button> */}
+        )}
+      </div>
+
+      <div className="body-container">
+        {!isAuthenticated ? (
+          <>
+            <div className="row">
+              <h1>NextPlay.</h1>
+            </div>
+            <div className="row">
+              <button
+                type="submit"
+                className="submit-button"
+                onClick={() => loginWithRedirect()}
+              >
+                Ingresar
+              </button>
+            </div>
+          </>
+        ) : (
+          <>
+            <div className="row">
+              <h1>NextPlay.</h1>
+            </div>
+            <div className="row">
+              <h2>Welcome {user?.nickname}</h2>
+            </div>
+            <div className="row">
+              <button
+                type="submit"
+                className="submit-button"
+                onClick={() => navigate('gameform')}
+              >
+                Recomiéndame juegos
+              </button>
+            </div>
+          </>
+        )}
+      </div>
     </>
   )
 }
