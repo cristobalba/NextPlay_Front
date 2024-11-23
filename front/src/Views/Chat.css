@@ -1,0 +1,90 @@
+/* Asegúrate de que el contenedor ocupe toda la página */
+.chat-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    padding: 2rem;
+    background-color: #f4f4f4;
+}
+
+/* Contenedor de las tarjetas */
+.recommendations-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    justify-content: center;
+}
+
+/* Estilos comunes para las tarjetas */
+.recommendation-card {
+    width: 200px;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    text-align: center;
+}
+
+.recommendation-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.recommendation-card p {
+    font-size: 0.9rem;
+    color: #555;
+}
+
+/* Colores para las tarjetas, asignados por índice */
+.color-1 {
+    background-color: #f8d7da;
+}
+
+.color-2 {
+    background-color: #d1ecf1;
+}
+
+.color-3 {
+    background-color: #c3e6cb;
+}
+
+.color-4 {
+    background-color: #fff3cd;
+}
+
+.color-5 {
+    background-color: #e2e3e5;
+}
+
+/* Estilos para la barra de chat */
+.chat-bar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: auto;
+}
+
+.chat-input {
+    width: 80%;
+    height: 100px;
+    padding: 1rem;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    resize: none;
+    margin-bottom: 1rem;
+}
+
+.send-button {
+    padding: 0.6rem 1.2rem;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.send-button:hover {
+    background-color: #0056b3;
+}
