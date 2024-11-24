@@ -123,8 +123,6 @@ textarea:focus {
     /* Scroll interno */
     background-color: #f9f9f9;
     height: 100%;
-    /* Ajusta al contenedor */
-    margin-top: 8%;
 }
 
 .recommendations-section h2 {
@@ -240,4 +238,22 @@ textarea:focus {
 .subtitle {
     margin-bottom: 2%;
     font-size: large;
+}
+
+.navigate-button-container {
+    margin-top: 10%;
+    text-align: left;
+}
+
+.navigate-button {
+    padding: 10px 20px;
+    background-color: #00B5A3;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.navigate-button:hover {
+    background-color: #009f8b;
 }

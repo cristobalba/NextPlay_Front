@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';  // Importa los estilos
 import "./Chat.css";
 import Navbar from '../Components/Navbar';
+import { RiArrowGoBackFill } from "react-icons/ri";
 
 function Chat() {
   const location = useLocation();
@@ -15,6 +16,7 @@ function Chat() {
   const [selectedRecommendationId, setSelectedRecommendationId] = useState(null);
   const [selectedGameTitle, setSelectedGameTitle] = useState("");
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const navigate = useNavigate(); // useNavigate hook
 
   const handleRatingChange = (e) => {
     setRating(e.target.value);
@@ -73,9 +75,20 @@ function Chat() {
     setIsModalOpen(false);
   };
 
+  const handleNavigateToForm = () => {
+    navigate('/gameform'); // Redirigir a la vista /form
+  };
+
   return (
     <>
       <Navbar />
+      {/* Botón para redirigir a /form */}
+      <div className="navigate-button-container">
+        <button onClick={handleNavigateToForm} className="navigate-button">
+          {<RiArrowGoBackFill />} Generar nueva recomendación
+        </button>
+      </div>
+
       <div className="chat-recommendations-container">
         {/* Recommendations Section */}
         <div className="recommendations-section">
