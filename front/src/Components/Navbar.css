@@ -1,0 +1,93 @@
+/* Header general */
+.nextplay-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    color: white;
+    background-color: #1B2838;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.nextplay-header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #1B2838;
+}
+
+/* Evitar espacios blancos */
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Título con shimmer */
+.nextplay-title {
+    font-size: 2rem;
+    font-weight: bold;
+    position: relative;
+    display: flex;
+    overflow: hidden;
+    white-space: nowrap;
+    align-items: center;  /* Alinea los elementos verticalmente */
+}
+
+.by {
+    font-weight: normal;
+}
+
+.nextplay-title span,
+.nextplay-title p {
+    margin: 0;  /* Elimina márgenes para evitar espaciado extra */
+    position: relative;
+    z-index: 1;
+}
+
+.nextplay-title p {
+    margin-left: 0.5rem;  /* Añade un pequeño espaciado entre 'by' y el icono */
+}
+
+.nextplay-title svg {
+    margin-left: 0.5rem;  /* Espaciado entre 'by' y el ícono */
+}
+
+/* Botones */
+.nextplay-actions .btn {
+    background-color: #007bff;
+    border: none;
+    color: white;
+    padding: 8px 15px;
+    margin-left: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.nextplay-actions .btn:hover {
+    background-color: #0056b3;
+}
+
+.nextplay-actions .logout-btn {
+    background-color: #dc3545;
+}
+
+.nextplay-actions .logout-btn:hover {
+    background-color: #a71d2a;
+}
+
+/* Asegurarse de que el contenido debajo no quede oculto por el navbar */
+body>*:not(.nextplay-header) {
+    margin-top: 60px;
+    /* Ajustar según la altura del navbar */
+}

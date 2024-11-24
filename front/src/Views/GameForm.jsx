@@ -4,6 +4,7 @@ import "./GameForm.css"; // Import the CSS file for styling
 import axios from "axios";
 import { useAuth0 } from "@auth0/auth0-react";
 import useAuthToken from '../Auth/useAuthToken';
+import Navbar from '../Components/Navbar';
 
 function GameForm() {
   const { isAuthenticated } = useAuth0();
@@ -69,12 +70,14 @@ function GameForm() {
 
   useEffect(() => {
     if (recommendations.length > 0) { // Verificar si hay recomendaciones antes de navegar
-      navigate('../chat', { state: { recommendations: recommendations } });
+      navigate('../chat', { state: { recommendations: recommendations, token: token } });
     }
   }, [recommendations, navigate]); // Este useEffect solo se activa cuando recommendations cambia
 
 
   return (
+    <>
+    <Navbar />
     <div className="form-container">
       <h2>Rellena con tus preferencias de juegos</h2>
       <form onSubmit={handleSubmit} className="game-form">
@@ -133,6 +136,7 @@ function GameForm() {
         }
       </form>
     </div>
+    </>
   );
 }
 

@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import React, { useEffect } from 'react';
 import useAuthToken from './Auth/useAuthToken';
 import axios from 'axios';
+import Navbar from './Components/Navbar';
 
 function App() {
   const { loginWithRedirect, logout, user, isAuthenticated, getIdTokenClaims, isLoading } = useAuth0();
@@ -44,23 +45,13 @@ function App() {
 
   return (
     <>
-      <div className="header-container">
-        {isAuthenticated && (
-          <button
-            type="submit"
-            className="logout-button"
-            onClick={() => logout({ returnTo: window.location.origin })}
-          >
-            Logout
-          </button>
-        )}
-      </div>
+      {isAuthenticated ? (<Navbar />):(<div className="header-container"></div>)}
 
       <div className="body-container">
         {!isAuthenticated ? (
           <>
             <div className="row">
-              <h1>NextPlay.</h1>
+              <h1>NextPlay</h1>
             </div>
             <div className="row">
               <button
@@ -74,11 +65,9 @@ function App() {
           </>
         ) : (
           <>
+            <div className='space'></div>
             <div className="row">
-              <h1>NextPlay.</h1>
-            </div>
-            <div className="row">
-              <h2>Welcome {user?.nickname}</h2>
+              <h1>Bienvenido {user?.nickname}</h1>
             </div>
             <div className="row">
               <button
