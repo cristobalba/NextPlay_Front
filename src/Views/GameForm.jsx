@@ -83,15 +83,31 @@ function GameForm() {
       <form onSubmit={handleSubmit} className="game-form">
         <div className="form-group">
           <label htmlFor="genre">Género de juego:</label>
-          <input
-            type="text"
+          <select
             id="genre"
             name="genre"
             value={formData.genre}
             onChange={handleChange}
-            placeholder="e.g., Acción, RPG"
             required
-          />
+          >
+            <option value="" disabled>
+              Seleccionar género
+            </option>
+            <option value="Acción">Acción</option>
+            <option value="Aventura">Aventura</option>
+            <option value="RPG">RPG</option>
+            <option value="Deportes">Deportes</option>
+            <option value="Simulación">Simulación</option>
+            <option value="Estrategia">Estrategia</option>
+            <option value="Lucha">Lucha</option>
+            <option value="Survival Horror">Survival Horror</option>
+            <option value="Carreras">Carreras</option>
+            <option value="MOBA">MOBA</option>
+            <option value="Battle Royale">Battle Royale</option>
+            <option value="Indie">Indie</option>
+            <option value="Sandbox">Sandbox</option>
+            {/* Add more genres as needed */}
+          </select>
         </div>
         <div className="form-group">
           <label htmlFor="favorite">Juego favorito:</label>
@@ -120,6 +136,9 @@ function GameForm() {
             <option value="Single Player">Single Player</option>
             <option value="Multiplayer">Multiplayer</option>
             <option value="Co-op">Co-op</option>
+            <option value="PvP">Player vs Player</option>
+            <option value="Free to Play">Free to Play</option>
+            {/* Add more types as needed */}
           </select>
         </div>
         <button
