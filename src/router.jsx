@@ -4,6 +4,7 @@ import {
 import App from './App.jsx';
 import GameForm from './Views/GameForm';
 import Chat from './Views/Chat';
+import History from './Views/History.jsx';
 
 const router = createBrowserRouter([
   {
@@ -17,6 +18,10 @@ const router = createBrowserRouter([
   {
     path: "/chat",
     element: <Chat />,
+  },
+  {
+    path: "/recommendations",
+    element: <History />,
   },
 ]);
 

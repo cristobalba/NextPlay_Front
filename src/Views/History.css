@@ -1,0 +1,85 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#root {
+    width: 100%;
+    height: 100vh;
+    /* Asegurando que ocupe toda la altura de la página */
+    display: flex;
+    justify-content: center;
+    /* Centra horizontalmente */
+    align-items: center;
+    /* Centra verticalmente */
+    padding: 0;
+    text-align: center;
+    background: linear-gradient(to bottom, #1F3A64, #5C92C1);
+}
+
+.game-list-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    /* Eliminamos cualquier margen extra */
+    padding: 15px;
+    /* Ajustamos el relleno si es necesario */
+    background: rgba(255, 255, 255, 0.8);
+    /* Fondo con opacidad */
+    border-radius: 10px;
+    max-width: 1200px;
+    /* Ajustar el ancho máximo */
+}
+
+.game-list-scroll {
+    width: 100%;
+    max-height: 400px;
+    overflow-y: auto;
+    margin-bottom: 0;
+    /* Eliminamos el margen inferior */
+}
+
+.game-card-container {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    /* Eliminamos el margen */
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #f4f4f4;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.game-title-card {
+    padding: 3px;
+    border-radius: 5px;
+    color: white;
+}
+
+.game-description-card {
+    padding: 10px;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+    /* Ajuste el espacio entre la lista y los botones */
+}
+
+.pagination button {
+    padding: 10px;
+    background-color: #007bff;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.pagination button:disabled {
+    background-color: #dcdcdc;
+    cursor: not-allowed;
+}

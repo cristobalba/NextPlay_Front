@@ -45,13 +45,13 @@ function App() {
 
   return (
     <>
-      {isAuthenticated ? (<Navbar />):(<div className="header-container"></div>)}
+      <Navbar />
 
       <div className="body-container">
         {!isAuthenticated ? (
           <>
             <div className="row">
-              <h1>NextPlay</h1>
+              <h1  style={{color: 'white' }}>NextPlay</h1>
             </div>
             <div className="row">
               <button
@@ -67,7 +67,7 @@ function App() {
           <>
             <div className='space'></div>
             <div className="row">
-              <h1>Bienvenido {user?.nickname}</h1>
+              <h1 style={{color: 'white' }}>Bienvenido {user?.nickname}</h1>
             </div>
             <div className="row">
               <button

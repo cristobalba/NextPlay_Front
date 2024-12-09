@@ -6,14 +6,13 @@ body {
     width: 100%;
     height: 100%;
     overflow: hidden;
-    /* Desactiva scroll global */
     font-family: Arial, sans-serif;
-    /* Fuente base */
+    background: linear-gradient(to bottom, #1F3A64, #5C92C1);
+    /* Fondo con gradiente */
 }
 
 * {
     box-sizing: border-box;
-    /* Consistencia en el tamaño de los elementos */
 }
 
 /* Contenedor principal */
@@ -22,19 +21,16 @@ body {
     justify-content: center;
     align-items: center;
     height: 95vh;
-    /* Altura total de la ventana */
     width: 95vw;
-    /* Ancho total de la ventana */
     background-color: #ffffff;
-    /* Fondo blanco */
     margin: 0;
     padding: 0;
     overflow: hidden;
-    /* Evita scroll global */
     margin-top: 1%;
     margin-bottom: 1%;
 }
 
+/* Sección de retroalimentación */
 .feedback-section {
     max-width: 1280px;
     margin: 0 auto;
@@ -115,12 +111,10 @@ textarea:focus {
 /* Recommendations Section */
 .recommendations-section {
     width: 100%;
-    /* Ocupa el 60% de la pantalla */
     display: flex;
     flex-direction: column;
     padding: 20px;
     overflow-y: auto;
-    /* Scroll interno */
     background-color: #f9f9f9;
     height: 100%;
 }
@@ -174,6 +168,26 @@ textarea:focus {
     background-color: #8e7cc3;
 }
 
+/* Alineación del botón Generar Recomendación */
+.generate-recommendation-button {
+    padding: 0.8rem 1.2rem;
+    background-color: #00B5A3;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-bottom: 20px;
+    align-self: flex-start;
+    /* Alinea el botón a la izquierda */
+    transition: background-color 300ms ease;
+}
+
+.generate-recommendation-button:hover {
+    background-color: #009f8b;
+    filter: drop-shadow(0 0 2em #00B5A3aa);
+}
+
 /* Scrollbar styles */
 .chat-messages::-webkit-scrollbar,
 .recommendations-section::-webkit-scrollbar {
@@ -199,12 +213,10 @@ textarea:focus {
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
-    /* Fondo oscuro semi-transparente */
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 1000;
-    /* Asegurarse de que el modal esté sobre otros elementos */
 }
 
 .modal-content {
