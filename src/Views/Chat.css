@@ -18,16 +18,19 @@ body {
 /* Contenedor principal */
 .chat-recommendations-container {
     display: flex;
+    flex-direction: column;
+    /* Organiza en columna */
     justify-content: center;
+    /* Centra el contenido principal horizontalmente */
     align-items: center;
+    /* Centra el contenido principal verticalmente */
     height: 95vh;
     width: 95vw;
     background-color: #ffffff;
-    margin: 0;
+    margin: 1% 0;
+    /* Combina margen superior e inferior */
     padding: 0;
     overflow: hidden;
-    margin-top: 1%;
-    margin-bottom: 1%;
 }
 
 /* Sección de retroalimentación */
@@ -81,14 +84,12 @@ textarea {
 
 select:focus,
 textarea:focus {
-    border-color: #646cff;
     outline: none;
-    box-shadow: 0 0 3px rgba(100, 108, 255, 0.5);
 }
 
 .send-button {
     padding: 1rem 1.5rem;
-    background-color: #646cff;
+    background-color: #ffc107cc;
     color: #fff;
     border: none;
     border-radius: 8px;
@@ -98,15 +99,15 @@ textarea:focus {
 }
 
 .send-button:hover {
-    background-color: #505ac9;
-    filter: drop-shadow(0 0 2em #646cffaa);
+    background-color: #ffc107cc;
+    /* Color de fondo más suave */
+    filter: drop-shadow(0 0 1em rgba(255, 193, 7, 0.5));
+    /* Sombra más suave */
 }
 
 .send-button:focus {
     outline: none;
-    box-shadow: 0 0 3px rgba(100, 108, 255, 0.5);
 }
-
 
 /* Recommendations Section */
 .recommendations-section {
@@ -115,7 +116,7 @@ textarea:focus {
     flex-direction: column;
     padding: 20px;
     overflow-y: auto;
-    background-color: #f9f9f9;
+    background: linear-gradient(to bottom, #1F3A64, #5C92C1);
     height: 100%;
 }
 
@@ -179,7 +180,6 @@ textarea:focus {
     cursor: pointer;
     margin-bottom: 20px;
     align-self: flex-start;
-    /* Alinea el botón a la izquierda */
     transition: background-color 300ms ease;
 }
 
@@ -252,20 +252,6 @@ textarea:focus {
     font-size: large;
 }
 
-.navigate-button-container {
-    margin-top: 10%;
-    text-align: left;
-}
-
-.navigate-button {
-    padding: 10px 20px;
-    background-color: #00B5A3;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.navigate-button:hover {
-    background-color: #009f8b;
+.body-rec {
+    margin-top: 3%;
 }

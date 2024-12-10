@@ -40,7 +40,7 @@ function App() {
   }, [isAuthenticated, fetchToken]);
 
   if (isLoading) {
-    return <div><h2>Cargando ...</h2></div>;
+    return <div><h2 style={{ color: 'white' }}>Cargando ...</h2></div>;
   }
 
   return (
@@ -50,13 +50,15 @@ function App() {
       <div className="body-container">
         {!isAuthenticated ? (
           <>
+            <div className='space'></div>
             <div className="row">
-              <h1  style={{color: 'white' }}>NextPlay</h1>
+              <h1 style={{ color: 'white' }}>NextPlay</h1>
             </div>
             <div className="row">
               <button
                 type="submit"
                 className="submit-button"
+                style={{ color: 'black' }}
                 onClick={() => loginWithRedirect()}
               >
                 Ingresar
@@ -67,7 +69,7 @@ function App() {
           <>
             <div className='space'></div>
             <div className="row">
-              <h1 style={{color: 'white' }}>Bienvenido {user?.nickname}</h1>
+              <h1 style={{ color: 'white' }}>Bienvenido {user?.nickname}</h1>
             </div>
             <div className="row">
               <button

@@ -35,8 +35,8 @@ function Navbar() {
         {isAuthenticated && (
           <>
             <button onClick={goToHome} className="btn">Inicio</button>
-            <button onClick={goToNew} className='btn'>Generar nuevas recomendaciones</button>
-            <button onClick={goToRecs} className='btn'>Historial de recomendaciones</button>
+            <button onClick={goToNew} className='btn-green'>Generar nuevas recomendaciones</button>
+            <button onClick={goToRecs} className='btn-green'>Historial de recomendaciones</button>
             <button onClick={handleLogout} className="btn logout-btn">
               Logout
             </button>

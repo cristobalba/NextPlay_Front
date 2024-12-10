@@ -75,89 +75,83 @@ function Chat() {
     setIsModalOpen(false);
   };
 
-  const handleNavigateToForm = () => {
-    navigate('/gameform'); // Redirigir a la vista /form
-  };
-
   return (
     <>
       <Navbar />
       {/* Botón para redirigir a /form */}
-      <div className="navigate-button-container">
-        <button onClick={handleNavigateToForm} className="navigate-button">
-          {<RiArrowGoBackFill />} Generar nueva recomendación
-        </button>
-      </div>
 
-      <div className="chat-recommendations-container">
-        {/* Recommendations Section */}
-        <div className="recommendations-section">
-          <h2>Recomendaciones</h2>
-          <p className="subtitle">Haz click sobre una recomendación para dar feedback sobre esta y tener mejores recomendaciones a futuro!</p>
-          <div className="recommendations-grid">
-            {recommendations.map((recommendation, index) => (
-              <div
-                key={recommendation.id}
-                className={`recommendation-card color-${(index % 5) + 1}`}
-                onClick={() => handleRecommendationClick(recommendation.id, recommendation.gameTitle)} // Establecer el id de la recomendación al hacer clic
-              >
-                <h3>{recommendation.gameTitle}</h3>
-                <p>{recommendation.gameDescription}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Modal Pop-Up */}
-        {isModalOpen && (
-          <div className="modal-overlay" onClick={handleCloseModal}>
-            <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-              <h2>Tu opinión es importante</h2>
-              <p className="gameTitle">Sobre {selectedGameTitle}</p>
-              <form className="feedback-form" onSubmit={handleSendFeedback}>
-                <div className="feedback-input-container">
-                  <label htmlFor="rating">Calificación de la recomendación:</label>
-                  <select
-                    id="rating"
-                    value={rating}
-                    onChange={handleRatingChange}
-                    className="rating-input"
-                  >
-                    <option value="">Selecciona una calificación</option>
-                    <option value="1">1 - Muy malo</option>
-                    <option value="2">2 - Malo</option>
-                    <option value="3">3 - Aceptable</option>
-                    <option value="4">4 - Bueno</option>
-                    <option value="5">5 - Excelente</option>
-                  </select>
+      <div className="body-rec">
+        <div className="chat-recommendations-container">
+          {/* Recommendations Section */}
+          <div className="recommendations-section">
+            <h2 style={{color:'white'}}>Recomendaciones</h2>
+            <p className="subtitle" style={{color:'white'}}>Haz click sobre una recomendación para dar feedback sobre esta y tener mejores recomendaciones a futuro!</p>
+            <div className="recommendations-grid">
+              {recommendations.map((recommendation, index) => (
+                <div
+                  key={recommendation.id}
+                  className={`recommendation-card color-${(index % 5) + 1}`}
+                  onClick={() => handleRecommendationClick(recommendation.id, recommendation.gameTitle)} // Establecer el id de la recomendación al hacer clic
+                >
+                  <h3>{recommendation.gameTitle}</h3>
+                  <p>{recommendation.gameDescription}</p>
                 </div>
-
-                <div className="feedback-input-container">
-                  <label htmlFor="comment">Comentario sobre la recomendación:</label>
-                  <input
-                    id="comment"
-                    className="comment-input"
-                    value={comment}
-                    onChange={handleCommentChange}
-                    placeholder="Deja tu comentario..."
-                    rows="4"
-                  />
-                </div>
-
-                <div className="feedback-input-container">
-                  <button type="submit" className="send-button">
-                    Enviar
-                  </button>
-                  {missingData && <p style={{ color: 'red' }}>*Debes rellenar todos los campos</p>}
-                </div>
-                <div className="feedback-input-container">
-                  <button className="close-modal-button" onClick={handleCloseModal}>Cerrar</button>
-                </div>
-              </form>
+              ))}
             </div>
           </div>
-        )}
+
+          {/* Modal Pop-Up */}
+          {isModalOpen && (
+            <div className="modal-overlay" onClick={handleCloseModal}>
+              <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+                <h2>Tu opinión es importante</h2>
+                <p className="gameTitle">Sobre {selectedGameTitle}</p>
+                <form className="feedback-form" onSubmit={handleSendFeedback}>
+                  <div className="feedback-input-container">
+                    <label htmlFor="rating">Calificación de la recomendación:</label>
+                    <select
+                      id="rating"
+                      value={rating}
+                      onChange={handleRatingChange}
+                      className="rating-input"
+                    >
+                      <option value="">Selecciona una calificación</option>
+                      <option value="1">1 - Muy malo</option>
+                      <option value="2">2 - Malo</option>
+                      <option value="3">3 - Aceptable</option>
+                      <option value="4">4 - Bueno</option>
+                      <option value="5">5 - Excelente</option>
+                    </select>
+                  </div>
+
+                  <div className="feedback-input-container">
+                    <label htmlFor="comment">Comentario sobre la recomendación:</label>
+                    <input
+                      id="comment"
+                      className="comment-input"
+                      value={comment}
+                      onChange={handleCommentChange}
+                      placeholder="Deja tu comentario..."
+                      rows="4"
+                    />
+                  </div>
+
+                  <div className="feedback-input-container">
+                    <button type="submit" className="send-button" style={{color:'black'}}>
+                      Enviar
+                    </button>
+                    {missingData && <p style={{ color: 'red' }}>*Debes rellenar todos los campos</p>}
+                  </div>
+                  <div className="feedback-input-container">
+                    <button className="close-modal-button" onClick={handleCloseModal}>Cerrar</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          )}
+        </div>
       </div>
+
 
       {/* Importa el componente de ToastContainer para renderizar las notificaciones */}
       <ToastContainer />

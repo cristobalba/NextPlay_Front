@@ -83,3 +83,10 @@
     background-color: #dcdcdc;
     cursor: not-allowed;
 }
+
+.no-recommendations {
+    text-align: center;
+    color: #555;
+    font-size: 1.2rem;
+    margin-top: 2rem;
+}

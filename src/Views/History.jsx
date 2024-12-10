@@ -66,6 +66,11 @@ function GameList() {
                 <div className="game-list-scroll">
                     {loading ? (
                         <div className="loading">Cargando...</div> // Mostrar mensaje de carga
+                    ) : games.length === 0 ? (
+                        // Mostrar mensaje si no hay juegos
+                        <div className="no-recommendations">
+                            Aún no tienes recomendaciones en tu historial
+                        </div>
                     ) : (
                         // Mostrar los juegos de la página actual
                         paginate(games, currentPage, gamesPerPage).map((game, index) => (
@@ -83,17 +88,17 @@ function GameList() {
                         ))
                     )}
                 </div>
-
+    
                 {/* Botones de paginación fuera del área de scroll */}
                 <div className="pagination">
                     <button
-                        disabled={currentPage === 1}
+                        disabled={currentPage === 1 || games.length === 0}
                         onClick={() => changePage(currentPage - 1)}
                     >
                         Anterior
                     </button>
                     <button
-                        disabled={currentPage === Math.ceil(games.length / gamesPerPage)}
+                        disabled={currentPage === Math.ceil(games.length / gamesPerPage) || games.length === 0}
                         onClick={() => changePage(currentPage + 1)}
                     >
                         Siguiente

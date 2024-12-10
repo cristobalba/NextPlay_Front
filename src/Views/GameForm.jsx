@@ -79,7 +79,7 @@ function GameForm() {
     <>
     <Navbar />
     <div className="form-container">
-      <h2>Rellena con tus preferencias de juegos</h2>
+      <h2 style={{color:'#333'}}>Rellena con tus preferencias de juegos</h2>
       <form onSubmit={handleSubmit} className="game-form">
         <div className="form-group">
           <label htmlFor="genre">Género de juego:</label>
@@ -145,7 +145,7 @@ function GameForm() {
           type="submit"
           className="submit-button"
           onClick={() => checkInputs()}
-          style={{ color: 'white' }}
+          style={{ color: 'black' }}
         >
           {loading ? "Cargando..." : "Enviar"}
         </button>

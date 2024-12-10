@@ -91,3 +91,16 @@ body>*:not(.nextplay-header) {
     margin-top: 60px;
     /* Ajustar según la altura del navbar */
 }
+
+.btn-green {
+    background-color: #ffc107cc;
+    border: none;
+    color: white;
+    padding: 8px 15px;
+    margin-left: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
